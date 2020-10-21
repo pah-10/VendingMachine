@@ -15,7 +15,7 @@ int main() {
 	int codigo_Produto = 0, cod_ADM[2] = {12345, 12345}, qtd_Produto[qtd] = {1, 1, 1, 0, 0,1,1,0,0,1,1,1,0,0,1}, totalProduto = 0, acao_ADM, cod_Repor;
 	float preco_Produtos[qtd] = {7.5, 3, 3.5, 5, 1.80, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5}, pagamento = 0, troco = 0, lucroAtual = 0, lucroFuruto = 0, lucroTotal = 0;
 
-	//Soma o total de produtos e do faturamento maximo
+	//Soma do total de produtos e do faturamento maximo
 	for(int i = 0; i < qtd; i++){
 		totalProduto += qtd_Produto[i];
     	lucroTotal += qtd_Produto[i] * preco_Produtos[i];
@@ -26,7 +26,7 @@ int main() {
     	cout<<"\t---------BEM VINDO A VENDING MACHINE---------"<<endl<<endl;
     	cout<<"Estes são os meus produtos:"<<endl<<endl;
 
-    	//menu usuário
+    	//menu usuario
     	for(int i = 0; i < qtd ;i++){
 			cout<<"\tCódigo "<<i<<" -> "<<vet_Produtos[i]<< " R$ "<<preco_Produtos[i]<<endl;
     	}
@@ -34,23 +34,23 @@ int main() {
 			cout<<endl<<"Digite o código do produto desejado?"<<endl;
     	cin>>codigo_Produto;
     
-    	//verifica se é um codigo invalido
+    	//verifica se eh um codigo invalido
     	if (!(codigo_Produto < qtd && codigo_Produto > -1) && (!(codigo_Produto == cod_ADM[0] && codigo_Produto == cod_ADM[1]))){
       		cout<<"CÓDIGO INVÁLIDO"<<endl<<"--------------------------------------------------------------------------------------------"<<endl<<endl;
     	}
 
-    	//Verifica se o código é compátivel com os usuários
+    	//Verifica se o código eh compativel com os usuarios
     	if ((codigo_Produto < qtd) && (codigo_Produto > -1)){ 
-				cout<<"produto: "<<vet_Produtos[codigo_Produto]<<endl<<endl;
-				cout<<"Insira o pagamento no compartimento."<<endl;
-				cin>>pagamento;
-				cout<<endl<<"Foi inserido R$"<<pagamento<<endl<<endl;
+		cout<<"produto: "<<vet_Produtos[codigo_Produto]<<endl<<endl;
+		cout<<"Insira o pagamento no compartimento."<<endl;
+		cin>>pagamento;
+			cout<<endl<<"Foi inserido R$"<<pagamento<<endl<<endl;
 
       	//Verifica a qtd do produto escolhido
       	if(qtd_Produto[codigo_Produto] != 0){
 
-				//Verifica o valor inserido
-				if(pagamento > preco_Produtos[codigo_Produto]){
+		//Verifica o valor inserido
+		if(pagamento > preco_Produtos[codigo_Produto]){
 					troco = pagamento - preco_Produtos[codigo_Produto];
 					qtd_Produto[codigo_Produto] -= 1;
 					totalProduto -= 1;
@@ -68,7 +68,7 @@ int main() {
       		}
     	}
 
-		//Verifica se o codigo é igual ao do ADM
+		//Verifica se o codigo eh igual ao do ADM
 		if((codigo_Produto == cod_ADM[0]) || (codigo_Produto == cod_ADM[1])){
 
 			do{
@@ -79,7 +79,7 @@ int main() {
 
 				switch (acao_ADM){
 					case 1:
-						//inventário
+						//inventario
 						cout<<endl<<"Estes são os produtos vendidos na máquina e a suas respectivas quantidades:"<<endl<<endl;
 						for(int i = 0; i < qtd ;i++){
 							cout<<"O produto de código "<<i<<"("<<vet_Produtos[i]<<") possui "<<qtd_Produto[i]<<" quantidades disponíveis para venda"<<endl;
@@ -93,10 +93,10 @@ int main() {
 						cout<<"O lucro máximo da máquina, de acordo com o inventário atual, é de R$"<<lucroTotal<<endl<<"--------------------------------------------------------------------------------------------"<<endl<<endl;
 					break;
 					case 3:
-						//Reposição de produtos
+						//Reposicao de produtos
 						cout<<endl<<"Você escolheu reposição de produtos"<<endl;
 						do{
-							cout<<"Digite o código de produto que deseja repor:"<<endl;
+							cout<<"Digite o codigo de produto que deseja repor:"<<endl;
 							cin>>cod_Repor;
 							if(cod_Repor > -1 && cod_Repor < qtd){
 								cout<<"Quantas unidades serão colocadas?"<<endl;
@@ -107,7 +107,7 @@ int main() {
 								}
 								cout<<"--------------------------------------------------------------------------------------------"<<endl;
 							}else{
-								cout<<"Código inválido"<<endl<<"--------------------------------------------------------------------------------------------"<<endl;
+								cout<<"Codigo invalido"<<endl<<"--------------------------------------------------------------------------------------------"<<endl;
 							}
 							cout<<endl<<"Deseja repor outro produto?\nDigite S para sim\nDigite N para não"<<endl;
 							cin>>repor;
