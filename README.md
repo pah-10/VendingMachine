@@ -6,6 +6,6 @@ Projeto desenvolvido durante o 1º exame da materia de Algotimo e Lógica de Pro
 
 ### OBS:
 
-* A máquina executa o modo usuário infinitamente visando simular um funcionamento real.
-* Ela apenas ira desligar quando todo o estoque tiver sido esvaziado.
+* A máquina executa o modo usuário infinitamente visando se manter ligada e simular um funcionamento existente.
+* Ela ira desligar quando todo o estoque tiver sido esvaziado.
 * Para ativar o modo administrador basta inserir a senha 99.
